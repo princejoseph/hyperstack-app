@@ -55,7 +55,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'webpacker'
-gem 'rails-hyperstack', '~> 1.0.alpha1.0'
+gem 'rails-hyperstack',
+    git: 'git://github.com/hyperstack-org/hyperstack.git',
+    branch: 'edge',
+    glob: 'ruby/*/*.gemspec'
 group :development do
   gem 'foreman'
 end
