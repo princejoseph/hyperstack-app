@@ -14,11 +14,17 @@ class App < HyperComponent
   # Route('/', exact: true, mounts: Home)     : match the exact path / and mount the Home component
   # Route('/user/:id/name', mounts: UserName) : path segments beginning with a colon will be captured in the match param
   # see the hyper-router gem documentation for more details
+  #
+  # Route('/clock', mounts: Clock)
 
   render(DIV) do
     H1 { "Hello world from Hyperstack!" }
     BUTTON {"Click me"}.on(:click) do
       alert("All working!")
+      puts "Hurray!"
     end
+
+    Clock()
+    Timer()
   end
 end

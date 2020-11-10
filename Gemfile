@@ -62,3 +62,6 @@ gem 'rails-hyperstack',
 group :development do
   gem 'foreman'
 end
+
+group :development do
+end

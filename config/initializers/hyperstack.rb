@@ -1,3 +1,4 @@
+Hyperstack.cancel_import 'react/react-source-browser' # bring your own React and ReactRouter via Yarn/Webpacker
 # config/initializers/hyperstack.rb
 # If you are not using ActionCable, see http://hyperstack.orgs/docs/models/configuring-transport/
 Hyperstack.configuration do |config|
