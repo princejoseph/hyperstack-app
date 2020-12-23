@@ -18,13 +18,8 @@ class App < HyperComponent
   # Route('/clock', mounts: Clock)
 
   render(DIV) do
-    H1 { "Hello world from Hyperstack!" }
-    BUTTON {"Click me"}.on(:click) do
-      alert("All working!")
-      puts "Hurray!"
-    end
-
-    Clock()
-    Timer()
+    Route('/clock', mounts: Clock)
+    Route('/timer', mounts: Timer)
+    Route('/', mounts: Home)
   end
 end
