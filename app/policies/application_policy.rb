@@ -14,4 +14,6 @@ class Hyperstack::ApplicationPolicy
   ApplicationRecord.regulate_scope :all
 end unless Rails.env.production?
 # don't forget to provide a policy before production...
-::Rails.logger.debug("WARNING: You need to define a Hyperstack policy for production") if Rails.env.production?
+# ::Rails.logger.debug("WARNING: You need to define a Hyperstack policy for production") if Rails.env.production?
+# TODO: Change this to restrict the data going to client side
+ApplicationRecord.regulate_scope :all if Rails.env.production?
