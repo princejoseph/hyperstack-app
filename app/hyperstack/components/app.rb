@@ -17,9 +17,26 @@ class App < HyperComponent
   #
   # Route('/clock', mounts: Clock)
 
-  render(DIV) do
-    Route('/clock', mounts: Clock)
-    Route('/timer', mounts: Timer)
-    Route('/', mounts: Home)
+  # render(DIV) do
+  #   Route('/clock', mounts: Clock)
+  #   Route('/timer', mounts: Timer)
+  #   Route('/', mounts: Home)
+  #
+  #   H1 { "Number of Todos: #{Todo.count}" }
+  # end
+  #
+
+  render do
+    Clock()
+    Timer()
+
+    SECTION(class: 'todoapp') do
+      Header()
+      Route('/', exact: true) { Redirect('/all') }
+      Route('/:scope', mounts: Index)
+      Footer()
+    end
+
+    CreditsFooter()
   end
 end
