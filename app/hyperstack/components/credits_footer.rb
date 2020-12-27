@@ -4,6 +4,8 @@ class CreditsFooter < HyperComponent
     P { 'Double-click to edit a todo' }
 		P do
       SPAN { 'Credits: ' }
+      new_tab_link('https://docs.hyperstack.org/tutorial', 'HyperStack Tutorial')
+      SPAN { ', ' }
       new_tab_link('https://github.com/princejoseph', 'Prince Joseph')
     end
 
