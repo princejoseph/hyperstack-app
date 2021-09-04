@@ -15,6 +15,19 @@ ActiveRecord::Schema.define(version: 2020_12_23_095057) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "hyperstack_connections", force: :cascade do |t|
+    t.string "channel"
+    t.string "session"
+    t.datetime "created_at"
+    t.datetime "expires_at"
+    t.datetime "refresh_at"
+  end
+
+  create_table "hyperstack_queued_messages", force: :cascade do |t|
+    t.text "data"
+    t.integer "connection_id"
+  end
+
   create_table "todos", force: :cascade do |t|
     t.string "title"
     t.boolean "completed", default: false, null: false
