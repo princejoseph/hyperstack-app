@@ -9,7 +9,7 @@ class Index < HyperComponent
     LABEL(for: 'toggle-all') { 'Mark all as complete' }
 
     UL(class: 'todo-list') do
-      Todo.send(match.params[:scope]).sort_by(&:title).each do |todo|
+      Todo.send(match.params[:scope]).each do |todo|
         TodoItem(todo: todo)
       end
     end
